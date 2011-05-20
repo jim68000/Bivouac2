@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Beer</title>
+	</head>
+	<body class="sticky">
+		<h1>
+			((=atitle))
+		</h1>
+	<p>
+		((if x=y))
+		contents go here
+		((if nested)) 
+		this is a nested if
+		((if really=nested))
+		super nestat
+		((end if))
+		((end if))
+		((end if))
+		afterwards		
+	</p>
+
+</body>
+</html>

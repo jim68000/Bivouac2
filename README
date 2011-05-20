@@ -1,0 +1,4 @@
+TODO models
+TODO templating
+TODO add options to routes, transform url, etc, pass request to interested controllers (should this be automatic?)
+TODO better HTTP handling, incl caching

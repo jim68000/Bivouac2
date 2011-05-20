@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>circles</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-04-28 -->
+	<script src="../../lib/micro.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<canvas width="200" height="200" id="canv">
+</canvas>
+
+<script type="text/javascript" charset="utf-8">
+
+	var width = 200;
+	var canv = $('canv');
+	var c = canv.getContext('2d');
+	c.beginPath();
+	c.moveTo(width/2,width/2);
+	c.arc(width/2,width/2,width/2,0,360);
+	c.fillStyle = "#b6d2d6";
+	c.fill();
+	c.closePath();
+	
+	c.beginPath();
+	c.moveTo(width/2,width/2);
+	c.arc(width/2,width/2,width/3,0,360);
+	c.fillStyle = "#fff";
+	c.fill();
+	c.closePath();	
+	
+	var i1 = new Image();
+	i1.src = canv.toDataURL();
+	document.getElementsByTagName('body')[0].appendChild(i1);
+	c.beginPath();
+	c.moveTo(width/2,width/2);
+	c.arc(width/2,width/2,width/2,0,360);
+	c.fillStyle = "#3f8f99";
+	c.fill();
+	c.closePath();	
+	c.beginPath();
+	c.moveTo(width/2,width/2);
+	c.arc(width/2,width/2,width/3,0,360);
+	c.fillStyle = "#fff";
+	c.fill();
+	c.closePath();
+	var i2 = new Image();
+	i2.src = canv.toDataURL();
+	document.getElementsByTagName('body')[0].appendChild(i2);
+</script>
+</body>
+</html>

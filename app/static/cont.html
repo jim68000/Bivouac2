@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>presentation</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-03-24 -->
+	<style type="text/css" media="screen">
+		div { width: 100%; height: 100%; background: red; position: absolute; top: 0px; left:0px}
+	</style>
+	<script src="/socket.io/socket.io.js"></script><script src="lib/micro.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+
+<div id="scr1" style="display:block" onclick="sendnext()">
+	<h1>This is an awesome headline</h1>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	var socket = new io.Socket("ec2-50-17-78-206.compute-1.amazonaws.com");
+	socket.connect(); 
+	socket.on('connect', function(){ console.log('connected')});
+	socket.on('message', function(m){ 
+
+	 });
+	socket.on('disconnect', function(){  });
+	
+	var sendnext = function() {
+		socket.send("next");
+	}
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>socket</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-03-22 -->
+	<meta name="viewport-width" value="device-width">
+	<style type="text/css" media="screen">
+		div {
+			float: left;
+			height: 200px;
+			width: 200px;
+			background-color: #7cf;
+			margin: 1em;
+		}
+		div:active {
+			background-color: red;
+		}
+	</style>
+	<script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+<div id="c" onclick="socket.send(220)">
+	
+</div>
+<div id="d" onclick="socket.send(220)">
+	
+</div>
+<div id="e" onclick="socket.send(440)">
+	
+</div>
+
+<script>
+var socket = new io.Socket("ec2-50-17-78-206.compute-1.amazonaws.com");
+socket.connect(); 
+socket.on('connect', function(){ console.log('connected')});
+socket.on('message', function(m){ console.log(m) });
+socket.on('disconnect', function(){  });	
+
+
+socket.send("hello");
+
+</script>
+
+
+</body>
+</html>

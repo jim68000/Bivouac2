@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>graph</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-05-03 -->
+	<script src="lib/micro.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/canvas.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+
+<canvas width="400" height="200" id="cancan"></canvas>
+<canvas width="400" height="400" id="pie"></canvas>
+<div id="outp">
+	
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	var p = CANVAS.canvas($('pie'));
+	var pie = p.gc();
+	var gradients = CANVAS.linearGradient(pie);
+	var grad = pie.createLinearGradient(0,0,0,400);
+
+
+
+	function segment(ctx) {
+		var pie = ctx;
+		pie.beginPath()
+		pie.moveTo(200,200);
+		pie.lineTo(380,200);
+		pie.arc(200,200,180,0,Math.PI/3,0);	
+		pie.lineTo(200,200);
+		pie.fillStyle = gradients.horizontal_mid("#fff", "#fff", "#000", 0.2);
+		pie.fill();	
+		pie.closePath();
+	}
+	
+	
+	pie.fillStyle = gradients.horizontal_mid("#000", "#111", "#333", 0.2);
+	
+	pie.fillRect(0,0,400,400);
+	
+	
+	// segment 1
+	segment(pie);
+	
+	// segment 2
+	pie.rotate(Math.PI/3);
+	pie.translate(73,-275);
+	
+	segment(pie)
+
+	// segment 3
+	pie.rotate(Math.PI/3);
+	pie.translate(73,-275);
+	
+	segment(pie)
+
+	// segment 4
+	pie.rotate(Math.PI/3);
+	pie.translate(73,-275);
+	
+	segment(pie)
+	
+	// segment 5
+	pie.rotate(Math.PI/3);
+	pie.translate(73,-275);
+	
+	segment(pie)
+	
+	// segment 6
+	pie.rotate(Math.PI/3);
+	pie.translate(73,-275);
+	
+	segment(pie)
+
+
+	
+</script>
+
+
+<script type="text/javascript" charset="utf-8">
+
+
+	var d0 = new Date().getTime();
+
+
+	var c = CANVAS.canvas($('cancan'));
+	var con = c.gc();
+	var grad = con.createLinearGradient(0,0,0,200);
+	grad.addColorStop(0, "#000");
+	grad.addColorStop(1, "#000");
+	grad.addColorStop(.3, "#222");
+	
+	con.fillStyle = grad;
+	con.fillRect(0,0,400,200);
+
+	// Hashes
+	con.strokeStyle = "#444";	
+	con.lineWidth = .3;
+	con.beginPath();
+	
+	con.moveTo(20,0);
+	
+	for (var i = 20; i < 400; i+= 20) {		
+		con.lineTo(i, 180);
+		con.moveTo(i+20, 0);
+	}
+	con.stroke();
+	con.closePath();	
+
+	con.beginPath();
+
+	con.moveTo(20,20);
+	
+	for (var i = 20; i < 400; i+= 20) {
+		con.lineTo(400,i);
+		con.moveTo(20,i+20);
+	}
+	con.stroke();
+	con.closePath();
+	
+	
+
+	con.strokeStyle = "#E20074";
+	con.beginPath();
+	con.moveTo(20,180);
+	var st = 0;	
+	for (var i = 20; i < 400; i+=20) {
+		con.lineTo(i, 180 - (i/2/st) - st);
+		st += Math.random() * 15;
+		
+	}
+	
+	setInterval(function() {
+		
+	}, 100);
+
+	con.lineWidth = 2.0;
+	con.stroke();
+	con.closePath();
+	
+	con.strokeStyle = "#DDD";
+	con.beginPath();
+	con.moveTo(20,180);
+	var st = 0;	
+	for (var i = 20; i < 400; i+=20) {
+		con.lineTo(i, 180 - (i/2/st) - st);
+		st += Math.random() * 15;
+		
+	}
+	
+	setInterval(function() {
+		
+	}, 100);
+
+	con.lineWidth = 2.0;
+	con.stroke();
+	con.closePath();
+	
+	
+	con.font = "9px sans-serif";
+	con.fillStyle = "white";
+	con.fillText('1Gb', 1, 15);
+	con.fillText('0Gb', 1, 185);
+	c.replace_with_image();
+	$('outp').innerHTML = new Date().getTime() - d0;
+</script>
+
+</body>
+</html>

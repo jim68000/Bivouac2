@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>ws</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<script type="text/javascript" src="http://use.typekit.com/vyv1amn.js"></script>
+	<script type="text/javascript" src="lib/micro.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<!-- Date: 2011-03-15 -->
+		<style type="text/css" media="screen">
+
+			* {
+				border: 0;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				margin: 0em;
+			}
+
+			h1 {
+				font-size: 4em;
+				line-height: 0.95em;
+				letter-spacing:-2px;
+				font-family: Arial, "MS Trebuchet", sans-serif;
+				padding: 0.1em;
+			}
+
+			h2 {
+				font-size: 3em;
+				line-height: 0.9em;
+				font-family: Arial, "MS Trebuchet", sans-serif;
+				padding: 0.1em;
+
+
+			}
+
+			h3 {
+				font-size: 2em;
+				line-height: 0.8em;
+				font-family: Arial, "MS Trebuchet", sans-serif;
+
+
+			}
+
+			.heavy {
+				font-weight: 600;		
+			}
+
+			.light {
+				font-weight: 200;
+			}
+
+			#debug {
+				position: fixed;
+				width: 200px;
+				height: 100px;
+				font-size: 11px;
+				font-family: arial;
+				z-index: 99;
+				bottom: 0;
+				right: 0;
+				background-color: #DDD;
+			}
+
+			section {
+				float: left;
+				min-height: 40%;
+				margin-right: 1em;
+				margin-bottom: 1em;
+			}
+
+			article {
+				display:none;
+				-webkit-columns: 3;
+				-webkit-column-fill: balance;
+				margin-top: 2em;
+				line-height: 1.5em;
+				background-color: rgba(255,255,255,0.9);
+				letter-spacing: -1px;
+			}
+
+			.shown {
+				display: block;
+			}
+
+			p {
+				margin-top: 0.5em;
+			}
+
+			@-webkit-keyframes foc {
+			        0% {
+			                opacity: 0;
+			        }
+			        100% {
+			                opacity: 1;
+			        }
+			}
+
+
+			.focussed {
+				width: 100% !important;
+				min-height: 100%;
+				z-index: 2;
+			}
+
+			.typekit-badge {
+				display: none !important;
+			}
+
+
+		</style>
+
+
+</head>
+<body>
+<div id="gu">
+	
+</div>
+
+
+	<script type="text/javascript" charset="utf-8">
+	
+		var failer = function(err) {
+			$('gu').innerHTML = err;
+		}
+	
+		var reader = function(t) {
+			var response = JSON.parse(t);		
+			console.log(response);
+			for (var i = 0; i < response.length; i++) {
+				var h = "h1";
+				if (i > 2) {
+					h = "h2";
+				}
+				
+				if (i > 4) {
+					h = "h3";
+				}
+				
+				$('gu').innerHTML += "<section style=\"width:45%\"><"+h+" id=\"hello_am_i_goudy\" class=\"tk-myriad-pro-semi-condensed heavy\">" + response[i].title + "</"+h+"><article>" + response[i].body + "</article></section>";
+			}
+			
+			(function() {
+				var touched = function(ev) {		
+					if (cw.contains(this.children[1], "shown")) {
+						cw.remove(this.children[1], "shown");
+						cw.remove(this, "focussed");
+
+					} else {
+						cw.add(this, "focussed");
+						cw.add(this.children[1], "shown");	
+						// log(this.offsetTop);
+						var dist = this.offsetTop;
+						setTimeout(function(){
+							window.scroll(0, dist);	
+						}, 0);
+					}
+				}
+
+				var sects = document.getElementsByTagName('section');
+				for (var i in sects) {
+					if (typeof sects[i] === "object") {
+						sects[i].addEventListener('touch', touched);
+						sects[i].addEventListener('click', touched);		
+					}
+				}			
+			})();			
+			
+		}
+	
+		xhr.once("http://localhost:8124/news.json", reader, failer);
+	</script>
+</body>
+</html>

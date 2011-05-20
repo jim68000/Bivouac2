@@ -1,0 +1,25 @@
+['<html sdtuff>',
+	{
+		if: 'reason',
+	 	action: [
+			"hello"
+		]
+	},
+	{
+		foreach: 'object', 
+		variable: 'thing',
+		action: [
+			{
+				if: 'loopstatus.first',
+				action: ['first item']
+			},
+			'the apple is ',
+			variable_01,
+			' and green'
+		]
+	},
+	name_var,
+	'lives in',
+	home_var,
+	'</body></html>'
+]

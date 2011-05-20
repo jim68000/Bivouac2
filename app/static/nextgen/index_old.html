@@ -1,0 +1,157 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,  maximum-scale=1.0" />
+		<title>NextGen</title>
+
+		<script src="lib/micro.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/plushness.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+
+		</script>
+		<link rel="stylesheet" href="demo.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="speedo.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+	</head>
+	<body id="index">
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+			<div id="header">
+				<img src="imgs/t-logo.png" width="152" height="30" alt="T Logo">
+				<div id="searchbox">
+					<input type="submit" name="some_name" value="Go" id="some_name">
+					<input type="text" name="some_name" value="" id="some_name">
+				</div>
+				<div id="salutation">
+
+					<div id="controls">
+						<img src="imgs/add.png">
+						<img src="imgs/edit.png">
+					</div>
+					<div id="userid">
+						Hello Jim<br>
+						Not Jim? <a href="#">Logout</a>						
+					</div>					
+
+				</div>
+			</div>
+			
+			
+			<div id="your_account" class="ac_box">
+				<h1 id="your_account">Your Account</h1>
+				<div id="ac_details">
+					<div id="basic">
+						<p class="info">Overview</p>
+						<p class="info"><span class="nummer">0221 636 37373 373</span></p>
+						<p class="info">Call &amp; Surf Basic mit Internet - Flatrate</p>
+					</div>
+					<div id="speedometer">
+						<div id="speedo">
+								<img src="imgs/speedo/dial.png" width="200" height="200" alt="" id="dial">
+								<img src="imgs/speedo/indicator.png" width="200" height="200" alt="Indicator" id="indicator" class="null">
+								<img src="imgs/speedo/gradations.png" width="200" height="200" alt="" id="graticulations">
+								<div id="speed">
+									0Mbits
+								</div>
+						</div>
+					</div>
+				</div>
+				<div id="kundencenter">
+					blah and mnore blah
+				</div>
+			</div>
+			
+			
+			
+			
+			<!-- <div id="notif" class="badgebox">
+						<img src="imgs/notifications.png" width="54" height="54" alt="Notifications">
+					</div>
+					<div class="databox">
+						<h1 id="overview">Overview</h1>
+						<div id="aboutme">
+							<div id="personal" class="labout">
+								Jim Smith<br>
+								07893 373733<br>
+								Apple iPad
+							</div>
+
+							<div id="allowances" class="rabout">
+								<div id="data" class="bar">
+									<div id="data_used" class="anim_data">
+
+									</div>
+								</div>
+								<div id="sms" class="bar">
+									<div id="sms_used" class="anim_data">
+
+									</div>					
+								</div>
+								<div id="calls" class="bar">
+									<div id="calls_used" class="anim_data">
+
+									</div>					
+								</div>
+							</div>
+
+						</div>
+						
+					</div> -->
+			
+			<!-- <div class="badgebox">
+				<img src="imgs/photos.png" alt="Photos" >
+			</div>
+			<div class="databox">
+				<div id="outslider" class="outslider">
+					<div id="photoslider" class="photoslider">
+
+					</div>			
+				</div>				
+			</div> -->		
+		<div id="shade" style="display:none">
+			
+		</div>
+		
+		
+		
+
+
+		<!-- script src="images.js" type="text/javascript" charset="utf-8"></script -->
+		<script type="text/javascript" charset="utf-8">
+		
+		// function checkForThree(ev) {
+		// 	if (ev.touches.length > 1) {
+		// 		cw.add($('outslider'), "popup");
+		// 		cw.remove($('outslider'), "outslider");
+		// 		$('photoslider').style.width = "100%";
+		// 		$('shade').style.display = "block";
+		// 	}
+		// }
+		// 
+		// $('photoslider').addEventListener("touchend", checkForThree, true, true);
+		
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			setTimeout(function() {
+				// console.log("fired");
+				// cw.add($('data_used'), 'seventy');
+				// cw.add($('sms_used'), 'thirty');
+				// cw.add($('calls_used'), 'ten');		
+				cw.add($('indicator'), "slow");
+
+				$('indicator').addEventListener('webkitAnimationEnd', function( event ) { $('speed').innerHTML = "6Mbits" }, false );		
+			}, 1231)
+		});
+
+		</script>
+	</body>
+</html>

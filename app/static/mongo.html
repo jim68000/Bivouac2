@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script type="text/javascript" src="lib/micro.js"></script>
+
+
+	<title>mongo</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-03-16 -->
+</head>
+<body>
+
+<div id="datab">
+	
+</div>
+<script type="text/javascript" charset="utf-8">
+	
+	var depth = 0;
+	
+	var startExpansion = function(ins) {
+		var json = JSON.parse(ins);
+		console.log(json);
+		expandJson(json);	
+	}
+	
+	var expandJson= function(inj) {
+		depth++;
+		// console.log(inj);
+		var json = inj;		
+		// yuck
+		$('datab').innerHTML += "*";
+		if (json.__proto__.constructor === Array) {
+			$('datab').innerHTML += "Array<br>";
+		} else {
+			$('datab').innerHTML += typeof json + "<br>";
+		}
+		
+		for (i in json) {
+
+			if (depth < 12) {
+				if (typeof json[i] === 'string') {
+					$('datab').innerHTML += json[i].substr(0,30) + "...<br>";
+				} else {
+					expandJson(json[i]);
+				}
+			}
+		}
+		
+		
+		
+	};
+	
+	
+	
+	xhr.once("http://localhost:8124/news.json", startExpansion, function(){});
+</script>
+
+</body>
+</html>
