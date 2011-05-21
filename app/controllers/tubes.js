@@ -6,7 +6,7 @@
     exports.VERSION = '0.1';
 
     exports.handle = function(req, response, writer) {
-        Apricot.open("http://phon.me/processing.xml",
+        Apricot.open("http://cloud.tfl.gov.uk/TrackerNet/PredictionDetailed/P/BOS",
         function(err, doc) {
             var responseArr = new Array();
 
