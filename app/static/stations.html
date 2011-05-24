@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>stations</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-05-24 -->
+	<script src="lib/micro.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css" media="screen">
+		
+	</style>
+</head>
+<body>
+
+
+<select id="capture" onchange="nextdd(this.value)">
+	<option>Select a line</option>
+</select>
+
+<select id="stations" onchange="direction(this.value)" disabled></select>
+
+<select id="direct" disabled onchange="enablesave(1)"></select>
+
+<input type="button" name="some_name" value="Save" id="some_name" disabled>
+
+<script type="text/javascript" charset="utf-8">
+	var stns;
+	var line = "";
+	var station = "";
+	function parsestns(rez) {
+		stns = JSON.parse(rez);
+		
+		for (var i in stns) {
+			$('capture').innerHTML += "<option value='"+stns[i].code+"'>" + stns[i].full + "</option>";
+		}
+	} 
+	
+	function nextdd(cod) {
+		line = cod;
+		$('stations').disabled = false;
+		$('stations').innerHTML = "";
+		for (var i in stns[cod].stations) {
+			$('stations').innerHTML += "<option value='"+stns[cod].stations[i].code+"'>" + stns[cod].stations[i].display + "</option>";
+		}
+	}
+	
+	function selecter(rez) {
+		var res = JSON.parse(rez);
+		
+		$('direct').innerHTML = "";
+		$('direct').disabled = false;
+		
+		for (var i in res) {
+			$('direct').innerHTML += "<option>" + res[i] + "</option>";
+		}
+	}
+	
+	function enablesave() {
+				console.log(1);
+		$('some_name').disabled = false;
+
+	}
+	
+	function direction(kod) {
+		station = kod;
+		xhr.once('/directions?lin=' + line + '&stn=' + station , selecter)
+	}
+	
+	xhr.once("stations.json", parsestns);
+</script>
+
+
+</body>
+</html>
