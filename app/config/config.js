@@ -1,6 +1,6 @@
 (function(){
 	
-	var this_loc = "/Users/jim/graun/grauniad";
+	var this_loc = "/Users/jim/Lakshmi/graun/biv";
 	var appdir = "/app";
 	
 	exports.list_dirs = false;
@@ -15,6 +15,10 @@
 	exports.deployment = "development";
 	exports.default_file = "index.html";
 	exports.enable_socket = false;
+	exports.admin_shell = true;
+	exports.admin_port = 5000;
+	
+	
 	exports.log_level = 0; // FIXME point to external config
 	exports.mimes = {
 		"html": "text/html",

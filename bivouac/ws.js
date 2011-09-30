@@ -6,10 +6,11 @@
 	var log = require('./logger.js');
 	
 	function constructHeaders(payload) {
+			
 		
 		var res = {};
 		res['Content-Type'] = payload.mime;
-		if (payload.extras) {
+		if (payload.extras) { // TODO this way turns out to suck. can't send more than one cookie at a time as the object can only have unique keys
 			for (var i in payload.extras) {
 				res[i] = payload.extras[i];
 			}
@@ -21,7 +22,6 @@
 	
 	exports.VERSION = '0.1';	
 	exports.writer = function(req, res, payload) {
-		
 		res.writeHead(payload.code, constructHeaders(payload));
 		res.write(payload.payload);
 		res.end();

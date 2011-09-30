@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,  maximum-scale=1.0" />
+		<title>NextGen</title>
+
+		<script src="lib/micro.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/plushness.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+
+		</script>
+		<link rel="stylesheet" href="demo.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="speedo.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+	</head>
+	<body id="index">
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+			<div id="header">
+				<img src="imgs/t-logo.png" width="152" height="30" alt="T Logo">
+				<div id="searchbox">
+					<input type="submit" name="some_name" value="Go" id="some_name">
+					<input type="text" name="some_name" value="" id="some_name">
+				</div>
+				<div id="salutation">
+
+					<div id="controls">
+						<img src="imgs/add.png">
+						<img src="imgs/edit.png">
+					</div>
+					<div id="userid">
+						Hello Jim<br>
+						Not Jim? <a href="#">Logout</a>						
+					</div>					
+
+				</div>
+			</div>
+			
+			
+			<div id="your_account" class="ac_box">
+				<h1 id="your_account">
+				<img src="imgs/tonly.png" alt="Tonly" id="annoying_sub_logo">Your Account</h1>
+				<div id="ac_details">
+					<div id="basic">
+						<p class="info">Overview</p>
+						<p class="info"><span class="nummer">0221 636 37373 373</span></p>
+						<p class="info">Call &amp; Surf Basic mit Internet - Flatrate</p>
+					</div>
+					<div id="speedometer">
+						<div id="odometer">
+							<p class="info">Telefonie Festzetz</p>
+							<p class="info"><span class="infocost">32,35</span> &euro;</p>
+							<p class="info">Telefonie Mobilfunknetz</p>
+							<p class="info"><span class="infocost">3,67</span> &euro;</p>
+						</div>
+						
+						
+						<div id="speedo">
+								<img src="imgs/speedo/dial.png" width="200" height="200" alt="" id="dial">
+								<img src="imgs/speedo/indicator.png" width="200" height="200" alt="Indicator" id="indicator" class="null">
+								<img src="imgs/speedo/gradations.png" width="200" height="200" alt="" id="graticulations">
+								<div id="speed">
+									0Mbits
+								</div>
+						</div>
+					</div>
+				</div>
+				<div id="kundencenter">
+					<div id="view_account">
+						<h2>Kundencenter</h2>
+						<div class="button"><!-- Can't be bothered to fix iOS buttons TODO dirty hack-->
+							View Account Details
+						</div>						
+					</div>
+					<div id="hot_spot">
+						<div id="inner_hot_spot" style="float:right">
+							<h2>Telekom Hotspot Connection</h2>
+							<div class="floated time">0<br>hrs</div> <div class="floated intertime">:</div><div class="floated time buffer" id="minutes">13<br>mins</div>
+							<div class="button floated"><!-- Can't be bothered to fix iOS buttons TODO dirty hack-->
+								Logout
+							</div>	
+							<div class="button floated plain"><!-- Can't be bothered to fix iOS buttons TODO dirty hack-->
+								Settings
+							</div>
+						</div>
+					</div>
+					<div id="thumb">
+						
+					</div>
+				</div>
+			</div>
+		<div id="shade" style="display:none">
+			
+		</div>
+		
+		
+		
+
+
+		<script type="text/javascript" charset="utf-8">
+		
+		var mins = 13;
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			setTimeout(function() {	
+				cw.add($('indicator'), "slow");
+
+				$('indicator').addEventListener('webkitAnimationEnd', function( event ) { 
+					$('speed').innerHTML = "6Mbits" 
+					cw.add($('speed'), "speed");
+				}, false );		
+			}, 1231);
+
+			setInterval(
+				function() {
+					$('minutes').innerHTML = ++mins + "<br>mins";
+					cw.add($('minutes'), "minutes_flash");
+					setTimeout(
+						function() {
+							cw.remove($('minutes'), "minutes_flash");
+						}, 1000
+					);
+					
+				}, 60 * 1000
+			);
+			
+		});
+
+		</script>
+	</body>
+</html>

@@ -1,1 +1,2 @@
-TODO separate app and site
+TODO stackable middleware
+TODO make everything except req, res and response an options object

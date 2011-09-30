@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>feed_02</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-09-08 -->
+	<link rel="stylesheet" href="google.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<style type="text/css" media="screen">
+		#drawer {
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#494949), to(#272727));
+			height: 0px;
+			overflow: hidden;
+			padding: 0;
+			-webkit-transition: height 500ms ease-out 100ms;
+			position: relative;
+		}
+		
+		.bigger {
+			height: 135px !important;
+			border-bottom: 1px solid #3a3a3a;			
+		}
+		
+		#tool_bar {
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#676767), to(#555555));
+			width: 100%;
+			height: 40px;
+			color: #d0d0d0;
+			font-size: 12px;
+			border-bottom: 1px solid #525252;
+			overflow: hidden;
+		}
+		
+		#tool_bar .inners {
+			height: 25px;
+			padding-top: 15px;
+		}
+		
+		#salutation {
+			float: left;
+			padding: 1em;
+		}
+		
+		.tools {
+			border-left: 1px solid #626262;
+			float:right; 
+			padding-left: 1em 0;
+			overflow: hidden;
+			padding: 1em;
+		}
+		
+		#new_header {
+			background-image:url(icons/atopbar/logo.png);
+			background-repeat: no-repeat;
+			background-position: top right;
+		}
+		
+		ul {
+			padding: 8px 0 0 3px;
+			margin: 0;
+			border-top: 1px solid #535353;
+		}
+		
+		li {
+			list-style-type: none;
+			float: left;
+			width: 76px;
+			height: 76px;
+			margin: 2px 13px;
+			text-align: center;
+			color: #e6e6e6;
+			font-size: 11px;
+			border-radius: 5px;
+		}
+		
+		hr {
+			height: 1px;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			
+			background-color: #3a3a3a;
+			
+		}
+		
+		li.activated {
+			background-color: #676767;
+		}
+		
+		#services_button {
+			height: 37px;
+			width: 70px;
+			border-radius: 5px;
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#e7e7e7));
+			border: 1px solid #ccc;
+			position: absolute;
+			top: 18px;
+			font-size: 130%;
+		}
+		
+		.hit_services {
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b6b6b6), to(#cfcfcf)) !important;
+			color: white;
+			border: 1px solid #bbb !important;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	
+	<div id="outers" style='width:100%; height: 70px; box-shadow: #000 2px 0px 10px'>
+		<div style="width:980px;margin:auto;" id='new_header'>
+			
+			
+			<div style="position:relative;width:980px;background-repeat:no-repeat;background-image:url(library/img/header_bg_desktop.png);height:80px;">
+				<button onclick='NAVBAR.toggle_navbar()' id='services_button'>Services</button>	
+				
+				<form action="http://www.google.co.uk/search" onsubmit="handleSubmit();return false;" id="google_search" name="search" style="position:absolute;left:300px;top:13px;">
+					<input autocorrect="off" autocapitalize="off" type="text" id="searchinput" onfocus="this.className='search'" onblur="if(this.value==''){this.className='search google'}" class="search google" tabindex="1" value="" style="font-size:100%;width:250px;height:36px;margin-right:0" name="q"><span onclick="handleSubmit();" ontouchstart="this.className='submit submithover'" ontouchend="this.className='submit'" id="searchsubmit" tabindex="2" class="submit" value="" style="margin-left:0;width:3.5em;font-size:120%;height:40px;"></span>
+				</form>
+				
+			</div>
+		</div>		
+	</div>
+	<div id="drawer" style='height: 0; overflow: hidden'>
+		
+		<div id="tool_bar">
+			<div class="inners" id="salutation">
+				Welcome: Klaus
+			</div>
+			<div class='inners tools' style='padding-top: 12px; height: 28px'><img src="icons/settings.png" width="22" height="27" alt="Settings"></div>
+			
+			<div class='inners tools' style=''>Sign out</div>
+		</div>
+		
+		<!-- <hr> -->
+		<ul>
+			<li><img src="icons/home.png" width="50" height="52" alt="Home"><br>Home</li>
+			<li class='activated'><img src="icons/entertain.png" width="50" height="52" alt="Home"><br>Entertain</li>
+			<li><img src="icons/kundencenter.png" width="50" height="52" alt="Home"><br>Kundencenter</li>
+			<li><img src="icons/store.png" width="50" height="52" alt="Home"><br>Store</li>
+			<li><img src="icons/mediencenter.png" width="50" height="52" alt="Home"><br>Mediencenter</li>
+			<li><img src="icons/ebooks.png" width="50" height="52" alt="Home"><br>More</li>
+		</ul>
+		
+	</div>
+	
+<script type="text/javascript" charset="utf-8">
+
+	
+	var NAVBAR = (function(){
+		return { 
+			toggle_navbar:function() {
+				if (document.getElementById("drawer").className==="bigger") {
+					document.getElementById("drawer").className="";
+					document.getElementById('services_button').className = "";
+			
+				} else {
+					document.getElementById("drawer").className="bigger";
+					document.getElementById('services_button').className = "hit_services";
+				}
+			}
+			
+		}
+	})();
+
+
+
+	
+</script>
+</body>
+</html>

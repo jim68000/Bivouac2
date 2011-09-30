@@ -15,9 +15,10 @@
 	
         Apricot.open("http://cloud.tfl.gov.uk/TrackerNet/PredictionDetailed/"+q.lin+"/" + q.stn,
         function(err, doc) {
+			console.log(err);
             doc.find("p")
 			var choices = [];
-			
+			console.log(utils.randomUUID());
 			doc.each(function(e) {
 				choices.push(e._attributes._nodes.n._nodeValue);
 			});

@@ -22,14 +22,23 @@
 
 <select id="stations" onchange="direction(this.value)" disabled></select>
 
-<select id="direct" disabled onchange="enablesave(1)"></select>
+<select id="direct" disabled onchange="enablesave(this.value)"></select>
 
-<input type="button" name="some_name" value="Save" id="some_name" disabled>
+<input type="button" name="some_name" value="Save" id="some_name" disabled onclick="save_state()">
 
 <script type="text/javascript" charset="utf-8">
 	var stns;
 	var line = "";
 	var station = "";
+	var direct = "";
+
+
+	function forwardToSavePage(res) {
+		if (JSON.parse(res).status.toLowerCase() === 'ok') {
+			document.location = "/con_times.html"
+		}
+	}
+
 	function parsestns(rez) {
 		stns = JSON.parse(rez);
 		
@@ -58,10 +67,15 @@
 		}
 	}
 	
-	function enablesave() {
-				console.log(1);
+	function enablesave(val) {
+		direct = val;
+		
 		$('some_name').disabled = false;
 
+	}
+	
+	function save_state() {
+		xhr.once('/savedir?line=' + line + '&stn=' + station + '&dir=' + direct, forwardToSavePage)
 	}
 	
 	function direction(kod) {

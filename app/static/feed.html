@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>feed</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Jim Smith">
+	<!-- Date: 2011-09-06 -->
+	
+	<style type="text/css" media="screen">
+	
+		* {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+		
+		html {
+			font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+		}
+		
+		body {
+			background-color: #efefef;
+		}
+		
+		ul {
+			border: 1px solid #ccc;
+			margin: 1em 1em;
+/*			border-radius: 9px;*/
+			
+		}
+	
+		li {
+			list-style-type: none;
+			border-bottom: 1px solid #eeeeee;
+			padding: 1em;
+			background-color: white;
+			clear: left;
+			overflow: hidden;
+			
+		}
+		
+		.stained {
+           -webkit-transition: background-color 500ms ease-out 100ms;
+			background-color: white;
+		}
+		
+		.plain {
+			background-color: #FFFB4E;
+		}
+		
+		
+		h1 {
+			width: 100%;
+			background-color: #74736c;
+			font-size: 100%;
+			color: #fff;
+			padding: 1em;
+			border-bottom: 1px solid #333330;
+			font-weight: normal;
+		}
+		
+		#nav_bar {
+			height: 1.5em;
+			background-repeat: no-repeat;
+			background: #74736c url(icons/atopbar/t.png) no-repeat center center;
+			vertical-align: middle;
+			position: relative;
+		}
+		
+		strong {
+			font-weight: bolder;
+		}
+		
+		#drawer {
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bbb), to(#999), color-stop(.4,#aaa));
+			height: 0px;
+			overflow: hidden;
+			padding: 0;
+			-webkit-transition: height 500ms ease-out 100ms;
+			padding-left: 1em;
+			border-bottom: 1px solid #333330;
+			position: relative;
+		}
+		
+		#drawer img {
+			margin-right: 1em;
+			margin-top: 1em;
+		}
+		
+		.bigger {
+			height: 90px !important;
+			padding: 1em;
+		}
+		
+		button {
+			border: 1px solid #222;
+			padding: 0.5em;
+			margin: 0.1em;
+			border-radius: 0.5em;
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8d8b7e), to(#636259), color-stop(.4999999,#636259), color-stop(.5,#3f3f3a));
+			color: #fff;
+			font-size: 120%;
+			position: absolute;
+			right: 2em;
+			top: 0.3em;
+
+		}
+		
+		.alerts {
+			font-size: 11px;
+			width: 14px;
+			height: 17px;
+			padding-left: 6px;
+			padding-top: 3px;
+			border-radius: 10px;
+			background-image: url(icons/atopbar/ball_02.png);
+			position: absolute;
+			text-shadow: #999 1px 1px 1px;
+			z-index: 99;
+           
+		}
+		
+		#fade {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255,255,255,.7);
+			z-index: 100;
+		}
+		
+		#contentual {
+			width: 60%;
+			margin: 15% 15%;
+			border: 1px solid #333;
+			background-color: #DDD;
+			padding: 5em;
+			border-radius: 2em;
+		}
+		
+		
+	</style>
+	<script src="zippy.js" type="text/javascript" charset="utf-8"></script>
+	<script src="icons.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+
+	<h1 id="nav_bar" onclick='toggle_navbar()'><strong>You are signed in:</strong> Klaus<button>Services</button></h1>
+	<h1 id="drawer">
+		<img src="icons/atopbar/kunden.png" width="66" height="65" alt="Kunden">
+		<img src="icons/atopbar/medien.png" width="66" height="65" alt="Medien">
+		<img src="icons/atopbar/ripple.png" width="66" height="65" alt="Ripple">
+		<img src="icons/atopbar/stop.png" width="66" height="65" alt="Stop">
+		<img src="icons/atopbar/wetter.png" width="66" height="65" alt="Wetter">
+
+		<div class="alerts" style='top: 5px;left: 67px; display: none; box-shadow: none;' id='al01'>
+			8
+		</div>
+		
+		<div class="alerts" style='top: 5px;left: 229px; padding-left: 7px; display: none' id='al02'>
+			7
+		</div>
+		
+		
+	</h1>
+		
+<ul id='megafeed'>
+	<li id="lead" class="megaspoons" onclick="this.className='stained'"><img src="icons/09-chat-2.png" width="24" height="22" alt="09 Chat 2"> Lorem ipsum your mum</li>
+	<li class="megaspoons"><img src="icons/110-bug.png" width="22" height="23" alt="110 Bug"> Lorem ipsum your mum</li>
+	<li class="megaspoons"><img src="icons/132-ghost.png" width="20" height="24" alt="132 Ghost"> Lorem ipsum your mum</li>
+	<li class="megaspoons"><img src="icons/09-chat-2.png" width="24" height="22" alt="09 Chat 2"> Lorem ipsum your mum</li>
+	<li class="megaspoons"><img src="icons/09-chat-2.png" width="24" height="22" alt="09 Chat 2"> Lorem ipsum your mum</li>
+	<li class="megaspoons"><img src="icons/158-wrench-2.png" width="22" height="22" alt="158 Wrench 2"> Lorem ipsum your mum</li>
+
+
+</ul>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+
+		function modalise() {
+			var d = document.createElement('div');
+			d.id = 'fade';
+			
+			var e = document.createElement('div');
+			e.id = 'contentual';
+			
+			e.innerHTML = 'This is what you want';
+			
+			d.appendChild(e);
+			
+			document.getElementsByTagName('body')[0].appendChild(d);
+		}
+
+
+		function make_new_li() {
+			var l = document.createElement('li');
+			l.className = 'stained plain megaspoon';
+			l.onclick = modalise;
+			l.innerHTML = "<div style='float: left; width: 40px'><img src=\"icons/158-wrench-2.png\" width=\"22\" height=\"22\" alt=\"158 Wrench 2\"></div>";
+			l.innerHTML += "<span style='float: left; margin-left: 30px'>Your text allowance is getting low - click here to top up</span>";
+			document.getElementById('megafeed').insertBefore(l, document.getElementById('megafeed').children[0]);
+			
+			setTimeout(function() {
+				l.className = 'stained';
+			}, 2500);
+
+		}
+
+		function toggle_navbar() {
+			
+			if (document.getElementById("drawer").className==="bigger") {
+				document.getElementById("drawer").className="";
+			} else {
+				document.getElementById("drawer").className="bigger";
+			}
+			
+			
+
+		}
+
+
+
+		setTimeout(function() {
+			document.getElementById('al01').style.display = 'block';
+			document.getElementById('al01').style.color = '#fff';
+			
+			make_new_li();
+			
+		}, 5500);
+
+		// setTimeout(function() {
+		// 	document.getElementById('al02').style.display = 'block';
+		// }, 8500);
+
+		
+		window.onload = function() {
+			var lis = document.getElementsByTagName('li');
+			for (var i in lis) {
+				lis[i].innerHTML = "<div style='float: left; width: 40px'><img src='icons/" + icons[Math.floor(Math.random() * icons.length)] + "'></div>";
+				
+				lis[i].innerHTML += "<span style='float: left; margin-left: 30px'>"+ zippy[Math.floor(Math.random() * zippy.length)] + '</span>';
+			}
+		}
+	
+</script>
+
+</body>
+</html>
