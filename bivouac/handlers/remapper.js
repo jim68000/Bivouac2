@@ -9,9 +9,9 @@
 	exports.is_static = true;
 	// build_res.handle(req.url, res, ws.writer);
 	exports.handle = function(req, res, writer) {
-		req.url = req.url + config.default_file;
+		req.url = req.url + "/" + config.default_file;
 		static_handler.handle(req, res, writer); // A decorator!
 	};
 	
 	
-}).call(this)
+}).call(this);

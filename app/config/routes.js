@@ -7,6 +7,7 @@
 		router.add_route(/beer.*/, 					"beer.js");
 		router.add_route(/tubes/, 					"tubes.js");
 		router.add_route(/resize.*/, 				"resize.js");
+		router.add_route(/newsread.*/, 				"reader.js");
 
 		router.add_route(/lines/, 					"lines.js");
 		router.add_route(/retrieve/, 				"retriever.js");
